@@ -50,7 +50,7 @@ class DialView @JvmOverloads constructor(
         style = Paint.Style.FILL
         textAlign = Paint.Align.CENTER
         textSize = 55.0f
-        typeface = Typeface.create("", Typeface.BOLD)
+        typeface = Typeface.DEFAULT_BOLD
     }
 
     // vars for retrieving colors from view attributes
@@ -95,7 +95,7 @@ class DialView @JvmOverloads constructor(
     }
 
     //method to draw view each time the screen refreshes
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         //set background color according to fan speed
@@ -107,7 +107,7 @@ class DialView @JvmOverloads constructor(
         }
 
         //draw the dial (background)
-        canvas!!.drawCircle((width / 2).toFloat(), (height / 2).toFloat(), radius, paint)
+        canvas.drawCircle((width / 2).toFloat(), (height / 2).toFloat(), radius, paint)
 
         //draw indicator circle
         val markerRadius = radius + RADIUS_OFFSET_INDICATOR
